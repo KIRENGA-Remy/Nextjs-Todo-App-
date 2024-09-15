@@ -8,7 +8,7 @@ function HeaderTop() {
         <p className='text-white font-semibold capitalize text-xl cursor-pointer'>Home</p>
         <p className='text-white font-semibold capitalize text-xl cursor-pointer'>Menu</p>
         <p className='text-white font-semibold capitalize text-xl cursor-pointer'>Orders</p>
-        <p className='text-white font-semibold capitalize text-xl cursor-pointer'>About</p>
+        <p className='text-white font-semibold capitalize text-xl cursor-pointer'>About us</p>
         <p className='text-white font-semibold capitalize text-xl cursor-pointer'>Contacts</p>
         <button className='px-3 py-1 bg-white text-black rounded-sm font-semibold cursor-pointer'>Login</button>
         <button className='px-3 py-1 bg-green-500 text-black rounded-sm font-semibold cursor-pointer'>Signup</button>
