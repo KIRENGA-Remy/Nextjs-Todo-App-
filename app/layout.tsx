@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-white text-black">
-        <Image src="/bg2.png" className="absolute right-0 w-2/4" width={100} height={200} alt="" />
+        <Image src="/bg2.png" className="absolute right-0 w-2/4 -z-10" width={100} height={200} alt="" />
         <HeaderTop />
         <HeaderMain />
         <Navbar />
