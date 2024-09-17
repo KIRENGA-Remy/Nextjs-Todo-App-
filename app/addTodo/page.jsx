@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Slide() {
+function AddTodo() {
   return (
     <div>
-      Slide page
+      Add Todo
     </div>
   )
 }
 
-export default Slide
+export default AddTodo

@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import HeaderTop from "@/components/HeaderTop";
-import HeaderMain from "@/components/HeaderMain";
 import Navbar from "@/components/Navbar";
-import Image from "next/image";
+import TopicsList from "@/components/TopicsList";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,11 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-white text-black">
-        <Image src="/bg2.png" className="absolute right-0 w-2/4 h-4/5 -z-10" width={100} height={200} alt="" />
-        <HeaderTop />
-        <HeaderMain />
+      <body className="bg-white m-auto max-w-3xl">
         <Navbar />
+        <TopicsList />
+        <TopicsList />
+        <TopicsList />
+        <TopicsList />
+        <TopicsList />
         {children}
       </body>
     </html>
