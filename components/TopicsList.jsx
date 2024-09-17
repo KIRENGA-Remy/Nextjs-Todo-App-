@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 import { FaEdit} from 'react-icons/fa'
 import { MdDelete } from "react-icons/md";
@@ -13,8 +14,15 @@ function TopicsList() {
              labore. Odio necessitatibus doloribus nesciunt recusandae?</p>
       </div>
       <div className='flex flex-row gap-2 font-bold text-3xl'>
-       <FaEdit className='cursor-pointer' />
-       <MdDelete className='text-red-600 cursor-pointer'/>
+        <div>
+            <Link href={"/editTodo/123"}>
+                <FaEdit className='cursor-pointer' />
+            </Link>
+       </div>
+       <div>       
+            <MdDelete className='text-red-600 cursor-pointer'/>
+        </div>
+
       </div>
     </div>
   )

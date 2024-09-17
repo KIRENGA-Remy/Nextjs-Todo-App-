@@ -29,11 +29,6 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-white m-auto max-w-3xl">
         <Navbar />
-        <TopicsList />
-        <TopicsList />
-        <TopicsList />
-        <TopicsList />
-        <TopicsList />
         {children}
       </body>
     </html>
