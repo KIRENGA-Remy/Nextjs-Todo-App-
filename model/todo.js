@@ -8,5 +8,4 @@ const todoSchema = new Schema(
     { timestamps: true}
 )
 
-const TODO =  mongoose.model("Todo", todoSchema);
-export default TODO;
+export default mongoose.model("todo", todoSchema);
