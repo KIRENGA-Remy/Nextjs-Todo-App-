@@ -1,27 +1,32 @@
-// import React from 'react'
-// import { MdDelete } from "react-icons/md";
-// import { useRouter } from 'next/router';
+"use client"
+import React from 'react';
+import { MdDelete } from "react-icons/md";
+import { useRouter } from 'next/navigation'; 
 
-// function DeleteTodo({ id }) {
-//     const router = useRouter();
-//     const removeTodo = async () => {
-//     const comfirm = comfirm("Are you sure?")
+function DeleteTodo({ id }) {
+  const router = useRouter(); 
 
-//     if(comfirm){
-//        const response = await fetch(`http://localhost:3000/api/todo?id=${id}`,{
-//             method: "DELETE",
-//         }
-//         )
-//         if(response.ok){
-//             router.refresh();
-//         }
-//     }
-// }
-//   return (
-//     <button onClick={removeTodo} className='text-red-600 cursor-pointer '>      
-//        <MdDelete className='font-bold text-3xl'/>
-//     </button>
-//   )
-// }
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/api/todo?id=${id}`, {
+        method: 'DELETE',
+      });
 
-// export default DeleteTodo
+      if (response.ok) {
+        router.refresh(); // Refreshes the page after deleting the todo
+      } else {
+        throw new Error('Failed to delete todo');
+      }
+    } catch (err) {
+      console.log("Error deleting todo", err);
+    }
+  };
+
+  return (
+    <button onClick={handleDelete}>
+      <MdDelete className='cursor-pointer text-red-600' />
+    </button>
+  );
+}
+
+export default DeleteTodo;

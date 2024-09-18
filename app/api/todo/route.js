@@ -6,7 +6,7 @@ export async function POST(request) {
     const { title, description } = await request.json();
     await connect();
     const newTodo = await todo.create({ title, description });  // Use 'newTodo' to avoid conflict
-    return NextResponse.json({ message: "Todo created", todos: newTodo }, { status: 201 });
+    return NextResponse.json({ message: "Todo created", newTodo }, { status: 201 });
 }
 
 export async function GET() {
