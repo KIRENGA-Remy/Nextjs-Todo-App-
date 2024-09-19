@@ -52,19 +52,18 @@ import getTodos from './GetTodos';
 
 async function TopicsList() {
     const {todos} = await getTodos(); // Fetch todos
-    console.log(todos);
+    console.log(" or " , {todos});
     
 
     return (
         <>
-            {todos.length > 0 ? (
-                todos.map((t) => (
-                    <div key={t._id} className='flex flex-row justify-between p-6 border-l border-b-2 border-black shadow-md rounded-sm my-4'>
+            {todos.map((t) => (
+                    <div key={t._id} className='flex flex-row justify-between p-6 border border-black rounded-sm my-4'>
                         <div className='flex flex-col gap-2'>
                             <h2 className='font-bold text-3xl text-black'>{t.title}</h2>
                             <p className='text-xl text-slate-800'>{t.description}</p>
                         </div>
-                        <div className='flex flex-row gap-2 font-bold text-3xl'>
+                        <div className='flex flex-row gap-2 font-bold items-baseline text-3xl'>
                                 <Link href={`/editTodo/${t._id}`}>
                                     <FaEdit className='cursor-pointer' />
                                 </Link>
@@ -72,9 +71,7 @@ async function TopicsList() {
                         </div>
                     </div>
                 ))
-            ) : (
-                <p>No todos found.</p>
-            )}
+            }
         </>
     );
 }
