@@ -1,5 +1,4 @@
 "use client";
-import React from 'react';
 import { MdDelete } from "react-icons/md";
 import { useRouter } from 'next/navigation'; 
 
@@ -11,8 +10,7 @@ function DeleteTodo({ id }) {
     
     const comfirm = comfirm("Are you sure?")
     if(comfirm){
-    try {
-      const response = await fetch(`http://localhost:3000/api/todo?id=${encodeURIComponent(id)}`, {
+      const response = await fetch(`http://localhost:3000/api/todo?id=${id}`, {
         method: 'DELETE',
       });
 
@@ -21,12 +19,7 @@ function DeleteTodo({ id }) {
       } else {
         throw new Error('Failed to delete todo');
       }
-    } catch (err) {
-      console.log("Error deleting todo", err);
-      // You can display a user-friendly error message here
-      alert("Failed to delete todo. Please try again.");
-    }
-  } else {
+    } else {
     alert("Delete Todo canceled")
   }
   };

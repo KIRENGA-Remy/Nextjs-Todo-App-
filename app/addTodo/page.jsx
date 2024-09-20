@@ -1,4 +1,4 @@
-"use client"; // Add this at the top of the file
+"use client"; 
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -26,6 +26,7 @@ function AddTodo() {
       });
 
       if (response.ok) {
+        router.refresh();
         router.push('/');
       } else {
         throw new Error('Failed to create a todo');
@@ -34,19 +35,21 @@ function AddTodo() {
       console.error('Error while creating todo:', err);
     }
   };
+  console.log("Remy Gitoli");
+  
 
   return (
     <form className='flex flex-col gap-3' onSubmit={handleAddTodo}>
       <input
-        value={title}
         onChange={(e) => setTitle(e.target.value)}
+        value={title}
         type="text"
         placeholder='Todo Title...'
         className='border border-slate-500 px-8 py-2'
       />
       <input
-        value={description}
         onChange={(e) => setDescription(e.target.value)}
+        value={description}
         type="text"
         placeholder='Todo Description...'
         className='border border-slate-500 px-8 py-2'

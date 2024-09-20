@@ -1,17 +1,17 @@
 "use client"
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 function EditTodoForm({ id, title, description}) {
 
   const [newTitle, setNewTitle] = useState(title);
   const [newDescription, setNewDescription] = useState(description);
-  const router = useRouter;
+  const router = useRouter();
 
   const handleUpdateTodo = async (e) => {
     e.preventDefault();
     try {
-      const update = await fetch(`http://localhost:3000/editTodo/${id}`, {
+      const update = await fetch(`http://localhost:3000/api/todo/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json"
