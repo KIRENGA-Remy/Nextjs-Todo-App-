@@ -5,7 +5,7 @@ const todoSchema = new Schema(
         title: String,
         description: String
     },
-    { timestamps: true}
-)
+    { timestamps: true }
+);
 
-export default mongoose.model("todo", todoSchema);
+export default mongoose.model("Todo", todoSchema);  // Use PascalCase
