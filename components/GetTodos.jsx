@@ -2,7 +2,7 @@ import React from 'react';
 
 const getTodos = async () => {
     try {
-        const res = await fetch("http://localhost:3000/api/todo", {
+        const res = await fetch("/api/todo", {
             cache: "no-store",
           });
       

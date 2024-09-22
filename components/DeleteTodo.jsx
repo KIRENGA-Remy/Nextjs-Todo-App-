@@ -10,7 +10,7 @@ function DeleteTodo({ id }) {
     
     const comfirm = comfirm("Are you sure?")
     if(comfirm){
-      const response = await fetch(`http://localhost:3000/api/todo?id=${id}`, {
+      const response = await fetch(`/api/todo?id=${id}`, {
         method: 'DELETE',
       });
 

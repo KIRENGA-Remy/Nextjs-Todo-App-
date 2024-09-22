@@ -6,14 +6,10 @@ import getTodos from './GetTodos';
 async function TopicsList() {
     const todos = await getTodos(); // Fetch todos directly
     console.log("Todos: ", todos);
-    
-    if (!todos || todos.length === 0) {
-        return <p>No todos available.</p>;
-    }
 
     return (
         <>
-            {todos.map((t) => (
+            {todos&&todos.map((t) => (
                 <div key={t._id} className='flex flex-row justify-between p-6 border border-black rounded-sm my-4'>
                     <div className='flex flex-col gap-2'>
                         <h2 className='font-bold text-3xl text-black'>{t.title}</h2>

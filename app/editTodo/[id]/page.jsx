@@ -2,7 +2,7 @@ import EditTodoForm from '../../../components/EditTodoForm';
 
 const updateTodoById = async (id) => {
   try {
-    const response = await fetch(`http://localhost:3000/api/todo/${id}`, {
+    const response = await fetch(`/api/todo/${id}`, {
       cache: "no-store",
     });
     if (!response.ok) {

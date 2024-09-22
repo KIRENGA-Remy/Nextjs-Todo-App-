@@ -17,7 +17,7 @@ function AddTodo() {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/addTodo', {
+      const response = await fetch('/api/todo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
