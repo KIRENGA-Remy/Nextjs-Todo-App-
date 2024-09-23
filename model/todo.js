@@ -8,5 +8,5 @@ const todoSchema = new Schema(
     { timestamps: true }
 );
 
-const model=mongoose.model("Todo", todoSchema);  // Use PascalCase
-export default model;
+const Todo = mongoose.models.Todo || mongoose.model("Todo", todoSchema);  // Use PascalCase
+export default Todo;

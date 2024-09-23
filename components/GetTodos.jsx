@@ -1,18 +1,22 @@
 import React from 'react';
 
-const getTodos = async () => {
+const getTodos = async (e) => {
     try {
         const res = await fetch("/api/todo", {
-            cache: "no-store",
-          });
-      
-          if (!res.ok) {
-            throw new Error("Failed to fetch topics");
-          }
-      
-          return res.json();
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            },
+        });
+
+        if (!res.ok) {
+            throw new Error("Failed to fetch todos");
+        }
+
+        return await res.json();  // Await the parsed JSON response
     } catch (err) {
-        console.log("Error loading todo: ", err);
+        console.log("Error loading todos: ", err);
+        return [];  // Return an empty array in case of error
     }
 }
 

@@ -17,7 +17,7 @@ function AddTodo() {
     }
 
     try {
-      const response = await fetch('/api/todo', {
+      const response = await fetch('http://localhost:3000/api/todo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,8 +35,6 @@ function AddTodo() {
       console.error('Error while creating todo:', err);
     }
   };
-  console.log("Remy Gitoli");
-  
 
   return (
     <form className='flex flex-col gap-3' onSubmit={handleAddTodo}>
