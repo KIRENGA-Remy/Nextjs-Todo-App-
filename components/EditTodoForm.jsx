@@ -11,7 +11,7 @@ function EditTodoForm({ id, title, description}) {
   const handleUpdateTodo = async (e) => {
     e.preventDefault();
     try {
-      const update = await fetch(`/api/todo/${id}`, {
+      const update = await fetch(`http://localhost:3000/api/todo/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json"
@@ -22,6 +22,7 @@ function EditTodoForm({ id, title, description}) {
       if(!update.ok){
         throw new Error("Failed to update todo")
       }
+
       router.refresh();
       router.push("/");
     } catch (err) {
@@ -32,8 +33,8 @@ function EditTodoForm({ id, title, description}) {
   }
   return (
     <form onSubmit={handleUpdateTodo} className='flex flex-col gap-3'>
-      <input type="text" onChange={(e) => setNewTitle(e.target.value)} value={newTitle} placeholder='Todo Title...' className='border border-slate-500 px-8 py-2' />
-      <input type="text" onChange={(e) => setNewDescription(e.target.value)} value={newDescription} placeholder='Todo Description...' className='border border-slate-500 px-8 py-2' />
+      <input type="text" onChange={(e) => setNewTitle(e.target.value)} value={newTitle} className='border border-slate-500 px-8 py-2' placeholder={newTitle} />
+      <input type="text" onChange={(e) => setNewDescription(e.target.value)} value={newDescription} className='border border-slate-500 px-8 py-2' placeholder={newDescription} />
       <button type='submit' className='bg-green-600 font-bold text-white py-3 px-6 w-fit'>Update Todo</button>
     </form>
   )

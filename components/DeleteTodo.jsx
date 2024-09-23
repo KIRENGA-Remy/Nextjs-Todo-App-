@@ -6,7 +6,6 @@ function DeleteTodo({ id }) {
   const router = useRouter(); 
 
   const handleDelete = async () => {
-    console.log("Button clicked");
 
     const isConfirmed = confirm("Are you sure you want to delete this todo?");
     
@@ -14,18 +13,13 @@ function DeleteTodo({ id }) {
       const response = await fetch(`http://localhost:3000/api/todo?id=${id}`, {
         method: 'DELETE',
       });
-
+      router.refresh();
       if (response.ok) {
         console.log('Todo deleted successfully');
-        
-        // Set a timeout for 30 seconds (30,000 milliseconds) before refreshing
-        setTimeout(() => {
-          router.refresh();
-        }, 30000); // 30 seconds delay
-
-        alert("Todo deleted. The page will refresh in 30 seconds.");
+          router.refresh()
       } else {
         alert("Failed to delete the todo.");
+        router.refresh();
       }
     } else {
       alert("Todo deletion canceled");
