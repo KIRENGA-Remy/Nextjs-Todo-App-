@@ -11,7 +11,7 @@ function EditTodoForm({ id, title, description}) {
   const handleUpdateTodo = async (e) => {
     e.preventDefault();
     try {
-      const update = await fetch(`http://localhost:3000/api/todo/${id}`, {
+      const update = await fetch(`${process.env.FRONTEND_URL}/api/todo/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json"

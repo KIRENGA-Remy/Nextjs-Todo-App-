@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import connect from '../../../../libs/mongodb'
 import Todo from '../../../../model/todo'
 
 export async function PUT(request, { params }) {

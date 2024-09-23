@@ -27,8 +27,6 @@ function TopicsList() {
         return <p>Loading todos...</p>; // Show loading message while fetching
     }
 
-    console.log("Todos: ", todos, " or ", { todos });
-
     return (
         <>
             {todos && todos.length > 0 ? (

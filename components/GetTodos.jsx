@@ -1,8 +1,7 @@
-import React from 'react';
 
-const getTodos = async (e) => {
+const getTodos = async () => {
     try {
-        const res = await fetch("/api/todo", {
+        const res = await fetch(`${process.env.FRONTEND_URL}/api/todo`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json"

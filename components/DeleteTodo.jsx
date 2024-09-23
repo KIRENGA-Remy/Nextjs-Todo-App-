@@ -10,13 +10,14 @@ function DeleteTodo({ id }) {
     const isConfirmed = confirm("Are you sure you want to delete this todo?");
     
     if (isConfirmed) {
-      const response = await fetch(`http://localhost:3000/api/todo?id=${id}`, {
+      const response = await fetch(`${process.env.FRONTEND_URL}/api/todo?id=${id}`, {
         method: 'DELETE',
       });
       router.refresh();
       if (response.ok) {
-        console.log('Todo deleted successfully');
-          router.refresh()
+          router.refresh();
+          router.push("/");
+          router.refresh();
       } else {
         alert("Failed to delete the todo.");
         router.refresh();
