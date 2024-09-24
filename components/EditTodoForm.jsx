@@ -33,8 +33,8 @@ function EditTodoForm({ id, title, description}) {
   }
   return (
     <form onSubmit={handleUpdateTodo} className='flex flex-col gap-3'>
-      <input type="text" onChange={(e) => setNewTitle(e.target.value)} value={newTitle} className='border border-slate-500 px-8 py-2' placeholder={newTitle} />
-      <input type="text" onChange={(e) => setNewDescription(e.target.value)} value={newDescription} className='border border-slate-500 px-8 py-2' placeholder={newDescription} />
+      <input type="text" onChange={(e) => setNewTitle(e.target.value)} value={newTitle} className='border border-slate-500 px-8 py-2' placeholder="Title..." />
+      <input type="text" onChange={(e) => setNewDescription(e.target.value)} value={newDescription} className='border border-slate-500 px-8 py-2' placeholder="Description..." />
       <button type='submit' className='bg-green-600 font-bold text-white py-3 px-6 w-fit'>Update Todo</button>
     </form>
   )

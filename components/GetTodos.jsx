@@ -12,7 +12,6 @@ const getTodos = async () => {
         if (!res.ok) {
             throw new Error("Failed to fetch todos");
         }
- console.log(process.env.FRONTEND_URL);
 
         return await res.json();  // Await the parsed JSON response
     } catch (err) {

@@ -4,7 +4,6 @@ import Todo from '../../../../model/todo'
 export async function PUT(request, { params }) {
     const {id} = params;
     const {newTitle: title, newDescription: description } = await request.json();
-    
     const updated = await Todo.findByIdAndUpdate(id, { title, description});
     return NextResponse.json({message: "Successfully Updated todo", updated}, {status: 200});
 }
