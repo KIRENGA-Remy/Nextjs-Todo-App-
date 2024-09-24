@@ -2,7 +2,7 @@ import EditTodoForm from '../../../components/EditTodoForm';
 
 const fetchTodoById = async (id) => { // Renamed to reflect fetching, not updating
   try {
-    const response = await fetch(`http://localhost:3000/api/todo/${id}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/todo/${id}`, {
       cache: "no-store", // Ensures the latest data is fetched
     });
     if (!response.ok) {
@@ -17,7 +17,6 @@ const fetchTodoById = async (id) => { // Renamed to reflect fetching, not updati
 
 export default async function EditTodo({ params }) {
   const { id } = params; // Extracting the id from params
-  console.log("This is the id:", id);
   
   const todoUpdate = await fetchTodoById(id); // No destructuring as the response is likely the todo itself
 

@@ -9,9 +9,10 @@ function EditTodoForm({ id, title, description}) {
   const router = useRouter();
 
   const handleUpdateTodo = async (e) => {
+    
     e.preventDefault();
     try {
-      const update = await fetch(`/api/todo/${id}`, {
+      const update = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/todo/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json"
@@ -31,6 +32,7 @@ function EditTodoForm({ id, title, description}) {
       
     }
   }
+  
   return (
     <form onSubmit={handleUpdateTodo} className='flex flex-col gap-3'>
       <input type="text" onChange={(e) => setNewTitle(e.target.value)} value={newTitle} className='border border-slate-500 px-8 py-2' placeholder="Title..." />

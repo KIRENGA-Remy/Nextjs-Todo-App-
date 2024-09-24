@@ -1,7 +1,7 @@
 import React from "react";
 const getTodos = async () => {
     try {
-        const res = await fetch("/api/todo", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/todo`, {
             
             method: 'GET',
             headers: {

@@ -16,7 +16,7 @@ function AddTodo() {
     }
 
     try {
-      const response = await fetch("/api/todo", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/todo`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
