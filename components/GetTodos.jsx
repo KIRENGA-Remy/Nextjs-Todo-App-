@@ -1,4 +1,3 @@
-import React from "react";
 const getTodos = async () => {
     try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/todo`, {
@@ -13,10 +12,10 @@ const getTodos = async () => {
             throw new Error("Failed to fetch todos");
         }
 
-        return await res.json();  // Await the parsed JSON response
+        return await res.json(); 
     } catch (err) {
         console.log("Error loading todos: ", err);
-        return [];  // Return an empty array in case of error
+        return []; 
     }
 }
 

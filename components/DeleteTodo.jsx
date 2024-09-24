@@ -7,7 +7,7 @@ function DeleteTodo({ id }) {
 
   const handleDelete = async () => {
 
-    const isConfirmed = confirm("Are you sure you want to delete this todo?");
+    const isConfirmed = confirm("Are you sure?");
     
     if (isConfirmed) {
       const response = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/todo?id=${id}`, {

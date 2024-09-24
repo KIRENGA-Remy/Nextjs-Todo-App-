@@ -3,28 +3,26 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FaEdit } from 'react-icons/fa';
 import DeleteTodo from './DeleteTodo';
-import getTodos from './GetTodos'; // Import getTodos function
+import getTodos from './GetTodos'; 
 
 function TopicsList() {
-    const [todos, setTodos] = useState([]); // State to store todos
-    const [loading, setLoading] = useState(true); // State to handle loading state
+    const [todos, setTodos] = useState([]); 
+    const [loading, setLoading] = useState(true); 
 
     useEffect(() => {
-        // Fetch todos when the component mounts
         const fetchTodos = async () => {
-            const response = await getTodos(); // Fetch todos from API
+            const response = await getTodos(); 
             
-            // Assuming the response is an object with 'todos' key
-            const { todos: fetchedTodos } = response; // Destructure todos from the response
-            setTodos(fetchedTodos || []); // Set the todos in state
-            setLoading(false); // Set loading to false
+            const { todos: fetchedTodos } = response; 
+            setTodos(fetchedTodos || []); 
+            setLoading(false); 
         };
 
         fetchTodos();
-    }, []); // Empty dependency array ensures this runs once when component mounts
+    }, []); 
 
     if (loading) {
-        return <p>Loading todos...</p>; // Show loading message while fetching
+        return <p>Loading todos...</p>; 
     }
     return (
         <>
