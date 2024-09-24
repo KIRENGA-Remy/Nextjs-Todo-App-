@@ -27,9 +27,7 @@ function EditTodoForm({ id, title, description}) {
       router.refresh();
       router.push("/");
     } catch (err) {
-      alert("Failed to update todo")
       console.log("Failed to update todo", err);
-      
     }
   }
   

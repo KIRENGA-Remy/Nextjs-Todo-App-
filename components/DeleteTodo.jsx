@@ -17,10 +17,8 @@ function DeleteTodo({ id }) {
       if (response.ok) {
           router.refresh();
           router.push("/");
-          router.refresh();
       } else {
         alert("Failed to delete the todo.");
-        router.refresh();
       }
     } else {
       alert("Todo deletion canceled");
