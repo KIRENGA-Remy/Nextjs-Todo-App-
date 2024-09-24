@@ -16,7 +16,7 @@ function AddTodo() {
     }
 
     try {
-      const response = await fetch(`${process.env.FRONTEND_URL}/api/todo`, {
+      const response = await fetch("/api/todo", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

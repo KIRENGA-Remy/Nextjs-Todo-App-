@@ -26,7 +26,6 @@ function TopicsList() {
     if (loading) {
         return <p>Loading todos...</p>; // Show loading message while fetching
     }
-
     return (
         <>
             {todos && todos.length > 0 ? (
