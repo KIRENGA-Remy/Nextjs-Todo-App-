@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FaEdit } from 'react-icons/fa';
 import DeleteTodo from './DeleteTodo';
-import getTodos from './GetTodos'; 
+// import getTodos from './GetTodos'; 
 
 const getTodos = async () => {
     try {
