@@ -7,7 +7,7 @@ export async function POST(request) {
     return NextResponse.json({ message: "Todo created", todo: newTodo }, { status: 201 });
 }
 
-export async function GET() {
+export async function GET(request) {
     const todos = await Todo.find();  // 'Todo' is the model from mongoose
     return NextResponse.json({ todos });
 }
