@@ -1,6 +1,6 @@
 const getTodos = async () => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/todo`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/todo`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json"

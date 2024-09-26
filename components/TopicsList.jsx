@@ -44,6 +44,8 @@ function TopicsList() {
     if (loading) {
         return <p>Loading todos...</p>; 
     }
+    console.log(process.env.NEXT_PUBLIC_MONGODB_URL);
+    
     return (
         <>
             {todos && todos.length > 0 ? (

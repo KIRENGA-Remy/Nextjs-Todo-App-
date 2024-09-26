@@ -9,7 +9,7 @@ export async function POST(request) {
 
 export async function GET(request) {
     const todos = await Todo.find();  // 'Todo' is the model from mongoose
-    return NextResponse.json({ todos });
+    return NextResponse.json({ todos, message: "Hello World" });
 } 
 
 export async function DELETE(request) {
